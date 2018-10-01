@@ -77,10 +77,10 @@ class TFImageClassifier(
             var location: RectF?
     ) {
         private val isLowValidity: Boolean =
-                confidence < 0.1
+                confidence < 0.3
 
         private val isHighValidity: Boolean =
-                confidence >= 0.75
+                confidence >= 0.5
 
         fun getOptimizedLabel(): String =
                 if (isLowValidity.not()) "$title:" else ""
